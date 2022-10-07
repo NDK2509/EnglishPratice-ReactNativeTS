@@ -21,7 +21,7 @@ const TaskListEle: React.FC<{task: Task}> = ({task}) => {
   return (
     <TouchableOpacity style={styles.task}>
       <CheckBox value={checked} onChange={() => setChecked(!checked)} style={styles.checkBox}/>
-      <CheckBox2 width={20} value={false} />
+      <CheckBox2 width={20} value={checked} onChange={() => setChecked(!checked)}/>
       <Text style={{color: COLORS.white}}>{task.content}</Text>
     </TouchableOpacity>
   );

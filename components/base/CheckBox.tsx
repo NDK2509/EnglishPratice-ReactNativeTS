@@ -1,5 +1,5 @@
 import React from "react"
-import { Touchable, TouchableOpacity } from "react-native"
+import { Text, Touchable, TouchableOpacity, View } from "react-native"
 import COLORS from "../../utils/colors"
 
 interface CallBack {
@@ -12,8 +12,8 @@ interface CheckBoxProps {
 }
 const CheckBox = ({width, value, onChange}: CheckBoxProps) => {
     return (
-        <TouchableOpacity style={{height: width, width: width, backgroundColor: COLORS.white}}>
-
+        <TouchableOpacity onPress={onChange} style={{height: width, width: width, backgroundColor: value ? COLORS.white : "transparent", borderWidth: 1, borderColor: COLORS.white}}>
+            {value&&<View><Text>+</Text></View>}
         </TouchableOpacity>
     )
 }
